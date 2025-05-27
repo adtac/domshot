@@ -70,7 +70,6 @@ func main() {
 						return
 					}
 					typ, msg, err := conn.Read(context.Background())
-					os.WriteFile("/tmp/outerr", []byte(fmt.Sprintf("%v %v %v\n", typ, msg, err)), 0o644)
 					if err != nil {
 						return
 					}
