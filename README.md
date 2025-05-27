@@ -1,6 +1,8 @@
 # domshot
 
-MCP server to fetch browser screenshots of DOM elements
+MCP server to fetch browser screenshots of DOM elements.
+
+https://github.com/user-attachments/assets/1ab36d65-32be-42f5-b3fc-97618c2e96a7
 
 ### Installation
 
@@ -9,17 +11,20 @@ $ git clone https://github.com/adtac/domshot.git
 $ claude mcp add domshot -- $PWD/domshot/mcp.sh
 ```
 
+Restart Claude.
+
 ### Usage
 
-Start Claude to also start the MCP server plus a HTTP server on port 8000.
-
-Inject the embed script by opening the **Console** tab of Chrome DevTools on the page you want to give Claude access and pasting this:
+Paste this in the **Console** tab of **Chrome DevTools** on the page you want to give Claude access:
 
 ```js
 const el = document.createElement("script"); el.src = "http://localhost:8000/embed.js"; document.head.appendChild(el);
 ```
 
-Ask Claude to call `get_browser_screenshot` and describe the result:
+Then ask Claude to call `get_browser_screenshot` and describe the result.
+
+<details>
+<summary>See example</summary>
 
 ```
 $ claude
@@ -43,6 +48,8 @@ $ claude
 ⏺ The screenshot shows a simple red webpage with the text "RED" displayed in white text, centered on a solid
   red background.
 ```
+
+</details>
 
 ### License
 
